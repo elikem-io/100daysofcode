@@ -31,43 +31,23 @@
           nisi soluta inventore dolor quos, esse numquam temporibus nostrum facilis earum.
         </p>
       </div>
-      <img src="./img/pp.jpeg" alt="">
+      <a href="about.html" id="img"><img src="./img/pp.jpeg" alt=""></a>
     </div>
   </div>
 
   <div class="lower-section">
-    <div class="blog">
+    <a href="article.html" class="blog">
       <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, nulla.</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
         Laborum hic maiores fuga, necessitatibus dolore a tenetur doloribus nobis
-        consectetur exercitationem veniam dolor, voluptatum neque numquam. <a href="">read more</a></p>
+        consectetur exercitationem veniam dolor, voluptatum neque numquam. </p>
       <div class="details">
         <p class="author">Written by : Daniel Shoo</p>
         <span class="date">May 19</span>
       </div>
+      </a>
     </div>
 
-    <div class="blog">
-      <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, nulla.</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Laborum hic maiores fuga, necessitatibus dolore a tenetur doloribus nobis
-        consectetur exercitationem veniam dolor, voluptatum neque numquam. <a href="">read more</a></p>
-      <div class="details">
-        <p class="author">Written by : Daniel Shoo</p>
-        <span class="date">May 19</span>
-      </div>
-    </div>
-
-    <div class="blog">
-      <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, nulla.</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Laborum hic maiores fuga, necessitatibus dolore a tenetur doloribus nobis
-        consectetur exercitationem veniam dolor, voluptatum neque numquam. <a href="">read more</a></p>
-      <div class="details">
-        <p class="author">Written by : Daniel Shoo</p>
-        <span class="date">May 19</span>
-      </div>
-    </div>
   </div>
 
   <div class="email">

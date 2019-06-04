@@ -9,11 +9,24 @@
   <title>Microblog - Form</title>
 </head>
 <body>
+    <header>
+    <div class="brand">
+      <h1></h1>
+      <ul class="menu">
+        <li><a href="index.html">home</a></li>
+        <li><a href="">contact</a></li>
+      </ul>
+    </div>
+
+  </header>
   <div class="form">
     <form class="" action="index.html" method="post">
       <input type="file" id="image"><br>
       <input type="text" id="the-title" placeholder="title"><br>
-      <textarea name="name" rows="8" cols="80" placeholder="article"></textarea>
+      <select name="" id="the-author">
+        <option value="">*Choose Your Name*</option>
+      </select><br>
+      <textarea name="name" rows="8" cols="100" placeholder="article"></textarea>
       <button type="submit">Post</button>
     </form>
   </div>

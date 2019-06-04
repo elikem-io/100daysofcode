@@ -62,22 +62,49 @@ header .brand{
 .title-content{
   display: flex;
   flex-direction: column;
+  width: 50%;
+  padding: 0 30px;
 }
 .title p{
   font-size: 20px;
-  padding: 30px 30px 0 0;
-  font-family: 'open sans', arial;
+  line-height: 28px;
+  font-family: 'open sans',arial;
+  margin: 15px 0;
 }
 .title-content h1{
   color: #21449C;
   font-family: 'EB Garamond';
-  font-size:2em;
+  font-size:4em;
   font-weight: bold;
 }
-.title img{
-  width: 45%;
+.title #img{
+  display: block;
+  width: 50%;
   height: 500px;
   box-shadow: 0px -4px 31px -11px rgba(0,0,0,0.75);
+  position: relative;
+  z-index: 0;
+}
+
+.title #img img{
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px -4px 31px -11px rgba(0,0,0,0.75);
+}
+.title #img::after{
+  content: '';
+  position: absolute;
+  display: block;
+  top:0;
+  left:0;
+  width: 100%;
+  height:100%;
+  background: #000;
+  overflow: auto;
+  z-index: 1;
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+  transition: 0.3s;
 }
 .lower-section{
   position: relative;
@@ -86,23 +113,42 @@ header .brand{
   margin: auto;
 }
 .lower-section .blog{
-  background-color: #333;
+  background-color: rgb(26, 26, 26);
   padding: 30px;
   box-shadow: 0px -4px 31px -11px rgba(0,0,0,0.75);
   margin: 20px 0;
+  display: block;
+  transition: 0.3s;
+}
+.blog:hover{
+  background: #21449C;
+}
+.blog:hover h3{
+  color: #141414;
+  border-bottom: 0.5px solid #000;
+}
+.blog:hover .date{
+  color: #141414;
+}
+.blog:hover .author{
+  color: #141414;
 }
 .blog h3{
   color: #fff;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   font-size: 45px;
   font-family: 'EB Garamond';
   font-weight:600;
   text-align: left;
+  border-bottom: 0.5px solid #757575;
+  padding-bottom: 15px;
 }
 .blog p{
   color: #fff;
   font-size: 20px;
+  font-weight: light;
   font-family: 'open sans', arial;
+  margin: 0;
 }
 .blog p a{
   color: #21449C;
@@ -113,8 +159,8 @@ header .brand{
 .blog .details{
   display: flex;
   justify-content: space-between;
-  margin: 10px 0;
-  border-top: 0.5px solid #c4c4c4;
+  margin: 0;
+  /*border-top: 0.5px solid #757575;*/
   padding-top: 10px;
   align-items: center;
 }
@@ -178,13 +224,22 @@ footer{
 }
 .form #the-title{
   height: 50px;
+  width: 500px;
   border: none;
+  border-bottom: 2px solid #c4c4c4;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+.form #the-author{
+  height: 50px;
+  width: 500px;
   border-bottom: 2px solid #c4c4c4;
   margin-bottom: 20px;
   padding: 10px;
 }
 .form textarea{
   width: 100%;
+  height: 200px;
   border: none;
   border-bottom: 2px solid #c4c4c4;
   margin-bottom: 20px;
@@ -199,11 +254,86 @@ footer{
   font-weight: bold;
   height: 80px;
   font-size: 2em;
-  font-family: 'open sans';
+  font-family: 'open sans',arial;
 }
 .form button:hover{
     background-color: #0E3088;
 }
+
+/* article page*/
+.blog-pic{
+  width: 80%;
+  margin: auto;
+  height: 80vh;
+}
+.blog-pic img{
+  width: 100%;
+  height: 100%;
+}
+.blog-pic #written-by{
+  font-family: 'open sans',arial;
+  font-style: italic;
+  margin: 10px 0;
+  font-size: 15px;
+  color: #21449C;
+}
+.article{
+  width: 60%;
+  margin: 50px auto;
+}
+.article #article-title{
+  font-size: 3.5em;
+  font-family: 'EB Garamond', serif;
+  font-weight: bolder;
+  margin: 30px 0;
+}
+.article p{
+  font-size: 18px;
+  line-height: 28px;
+  font-family: 'open sans',arial;
+  margin: 15px 0;
+}
+
+/*sign up*/
+.sign-up{
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+ 
+}
+.sign-up form{
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px -4px 31px -11px rgba(0,0,0,0.75);
+  padding: 50px 20px;
+  width: 70%;
+  height: 60%;
+  background: #21449C;
+}
+.sign-up form h1{
+  text-align: center;
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 3.5em;
+}
+.sign-up form input{
+ margin: 5px 0;
+ height: 50px;
+ padding: 10px;
+ border: none;
+}
+.sign-up form button{
+  margin: 5px 0;
+  height: 70px;
+  padding: 10px;
+  border: none;
+  font-family: 'open sans', arial;
+  font-size: 25px;
+ }
+ .sign-up form button:hover{
+  background-color: #141414;
+  color: #fff;
+ }
 @media only screen and (max-width: 767px){
   .brand h1{
     position: relative;
@@ -220,13 +350,60 @@ footer{
   .top-section{
     height: 100vh;
   }
+  .title{
+    width: 90%;
+  }
+  .title-content{
+    width: 100%;
+  }
+  .title h1{
+    font-size: 3em;
+  }
   .top-section::after{
     display: none;
   }
-  .title img{
-  display: none;
+  .lower-section{
+    position: relative;
+    top: 0%;
+  }
+  .title #img{
+    display: none;
   }
   .blog h3{
     font-size: 40px;
+  }
+
+  /* the form */
+  .form #the-title{
+    width: 100%;
+  }
+  .form #the-author{
+    width: 100%;
+  }
+
+  /*article page*/
+  .blog-pic{
+    width: 100%;
+  }
+  .blog-pic #written-by{
+    margin: 10px;
+  }
+  .article{
+    width: 80%;
+    margin: 50px auto;
+  }
+  .article #article-title{
+    font-size: 2.5em;
+  }
+  .article p{
+    font-size: 18px;
+    line-height: 28px;
+    margin: 15px 0;
+  }
+
+  /* sign up*/
+  .sign-up form{
+    width: 90%;
+    margin: auto;
   }
 }
