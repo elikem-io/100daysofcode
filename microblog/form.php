@@ -9,16 +9,7 @@
   <title>Microblog - Form</title>
 </head>
 <body>
-    <header>
-    <div class="brand">
-      <h1></h1>
-      <ul class="menu">
-        <li><a href="index.html">home</a></li>
-        <li><a href="">contact</a></li>
-      </ul>
-    </div>
-
-  </header>
+    
   <div class="form">
     <form class="" action="index.html" method="post">
       <input type="file" id="image"><br>

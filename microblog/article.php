@@ -10,16 +10,18 @@
     <title>Micro blog Article</title>
 </head>
 <body>
-        <header>
-                <div class="brand">
-                  <h1></h1>
-                  <ul class="menu">
-                    <li><a href="index.html">home</a></li>
-                    <li><a href="">contact</a></li>
-                  </ul>
-                </div>
-          
-              </header>
+    <header>
+        <div class="brand">
+          <h1></h1>
+          <ul class="menu">
+            <li><a href="index.html">home</a></li>
+            <li><a href="about.html">contact</a></li>
+          </ul>
+        </div>
+  
+      </header>
+  
+        
     <div class="blog-pic">
         <img src="./img/nicola.jpg" alt="">
         <p id="written-by">Written by: Nikola Jokic</p>

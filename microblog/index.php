@@ -16,7 +16,7 @@
         <h1></h1>
         <ul class="menu">
           <li><a href="index.html">home</a></li>
-          <li><a href="">contact</a></li>
+          <li><a href="about.html">contact</a></li>
         </ul>
       </div>
 
