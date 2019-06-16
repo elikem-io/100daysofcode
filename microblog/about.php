@@ -6,6 +6,7 @@
      <!-- Fonts Lora and open sans -->
   <link href="https://fonts.googleapis.com/css?family=EB+Garamond:400,500,600,700,800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,600i,700&display=swap" rel="stylesheet">
+  <link rel= "stylesheet" href="fontawesome.min.css"/>
   <link rel="stylesheet" href="./css/style.css">
     <title>Microblog - About</title>
 </head>
@@ -14,8 +15,8 @@
       <div class="brand">
         <h1></h1>
         <ul class="menu">
-          <li><a href="index.html">home</a></li>
-          <li><a href="">contact</a></li>
+          <li><a href="index.php">home</a></li>
+          <li><a href="about.php">contact</a></li>
         </ul>
       </div>
 
@@ -34,14 +35,28 @@
         <div>
            <h3> Fill in the form and get an estimate</h3>
         </div>
-        <form action="">
-            <input type="text" placeholder="Your name">
-            <input type="email" placeholder="Your email">
-            <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
-            <button type="submit">Send</button>
+        <form action="contactform.php">
+            <input type="text" name ="name" placeholder="Your name">
+            <input type="email" name ="mail" placeholder="Your email">
+            <input type="subject" name ="subject" placeholder="Subject">
+            <textarea name="" id="" cols="30" rows="10" name ="message" placeholder="Message"></textarea>
+            <button type="submit" name="submit">Send</button>
         </form>
     </div>
   </div>
+
+  <div class="email">
+    <p>Never miss a post</p>
+    <form class="" action="index.html" method="post">
+      <input type="text" name="" placeholder="Your email">
+      <button type="submit" id="bbtn">send</button>
+    </form>
+  </div>
+
+  <footer>
+    &copy microblog 2019
+  </footer>
+
   
 </body>
 </html>

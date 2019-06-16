@@ -1,3 +1,5 @@
+<?php session_start() ?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,8 +12,8 @@
 </head>
 <body>
      <div class="login-form">
-       <form action="">
-         <input type="text" name="email" placeholder="email">
+       <form action="includes/login.php" method="post">
+         <input type="text" name="username" placeholder="email">
          <input type="password" name="pwd" placeholder="password">
          <button type="submit" name="submit">Login</button>
        </form>
@@ -34,8 +36,7 @@
             <input type="text" name="lastname" placeholder="Last Name">
             <input type="text" name="email" placeholder="Email">
             <input type="password" name="pwd" placeholder="password">
-            <input type="text" name="occupation" placeholder="Profile eg(Creative Director)">
-            <input type="text" name="company" placeholder="Company">
+            <input type="text" name="username" placeholder="Username">
             <button type="submit" name="submit">Sign up</button>
         </form>
     </div>

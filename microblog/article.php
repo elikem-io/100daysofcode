@@ -1,12 +1,16 @@
+<?php session_start();?>
+<?php include_once 'includes/db.php';?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
      <!-- Fonts Lora and open sans -->
+     <link rel="stylesheet" href="./css/style.css">
   <link href="https://fonts.googleapis.com/css?family=EB+Garamond:400,500,600,700,800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,600i,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link rel= "stylesheet" href="css/fontawesome.min.css"/>
     <title>Micro blog Article</title>
 </head>
 <body>
@@ -14,19 +18,44 @@
         <div class="brand">
           <h1></h1>
           <ul class="menu">
-            <li><a href="index.html">home</a></li>
-            <li><a href="about.html">contact</a></li>
+            <li><a href="index.php">home</a></li>
+            <li><a href="about.php">contact</a></li>
           </ul>
         </div>
   
       </header>
   
-        
-    <div class="blog-pic">
+      <?php 
+      
+      $id = mysqli_real_escape_string($conn, $_GET['id']);
+      $sql = "SELECT * FROM blogposts where id = '$id'";
+
+      
+    $result = mysqli_query($conn, $sql);
+    $resultCheck = mysqli_num_rows($result);
+
+    if($resultCheck > 0){
+      while($row = mysqli_fetch_assoc($result)){
+
+        echo "
+        <div class='article'>
+        <h1 id='article-title'>".$row['subject']."</h1>
+        <p>".$row['content']." </p>
+        <ul>
+          <li><a href=''><i class='fa fa-twitter'></i></a></li>
+          <li><a href=''><i class='fa fa-behance'></i></a></li>
+          <li><a href=''><i class='fa fa-linkedin'></i></a></li>
+        </ul>
+    </div>
+        ";
+      }
+    }
+      ?>   
+   <!-- <div class="blog-pic">
         <img src="./img/nicola.jpg" alt="">
         <p id="written-by">Written by: Nikola Jokic</p>
-    </div>
-    <div class="article">
+    </div>-->
+    <!--<div class="article">
         <h1 id="article-title">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, aliquid!
         </h1>
@@ -43,7 +72,7 @@
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro eos optio cumque perspiciatis, odio, officia rerum tempore fuga omnis ipsum, molestias necessitatibus magnam distinctio corrupti delectus iure totam quisquam doloribus. Excepturi, magnam tempora cumque, iusto autem vitae ipsam omnis iste deserunt dolor ab, veritatis velit asperiores at praesentium. Vitae, molestias.
         </p>
-    </div>
+    </div>-->
     <div class="email">
         <p>Never miss a post</p>
         <form class="" action="index.html" method="post">

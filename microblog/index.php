@@ -1,3 +1,5 @@
+<?php session_start();?>
+<?php include_once 'includes/db.php';?>
 <html>
 <head>
   <meta charset="UTF-8">
@@ -7,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=EB+Garamond:400,500,600,700,800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,600i,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel= "stylesheet" href="css/fontawesome.min.css"/>
   <title>Microblog</title>
 </head>
 <body>
@@ -15,8 +18,8 @@
       <div class="brand">
         <h1></h1>
         <ul class="menu">
-          <li><a href="index.html">home</a></li>
-          <li><a href="about.html">contact</a></li>
+          <li><a href="index.php">home</a></li>
+          <li><a href="about.php">contact</a></li>
         </ul>
       </div>
 
@@ -31,11 +34,36 @@
           nisi soluta inventore dolor quos, esse numquam temporibus nostrum facilis earum.
         </p>
       </div>
-      <a href="about.html" id="img"><img src="./img/pp.jpeg" alt=""></a>
+      <a href="about.php" id="img"><img src="./img/pp.jpeg" alt=""></a>
     </div>
   </div>
 
-  <div class="lower-section">
+  <?php 
+   // mysqli_query($conn,'SELECT * FROM blogposts ORDER BY id DESC');
+    $sql = "SELECT * FROM blogposts ORDER BY id DESC";
+    $result = mysqli_query($conn, $sql);
+    $resultCheck = mysqli_num_rows($result);
+
+    if($resultCheck > 0){
+      while($row = mysqli_fetch_assoc($result)){
+
+        echo "
+        <div class = lower-section>
+        <a href='article.php?id=".$row['id']."' class='blog'>
+        <h3> ". $row["subject"]. "</h3>
+        <p>" . $row["content"]. "</p>
+        <div class='details'>
+          <p class='author'>Written by :". $row["author"]. "</p>
+          <span class='date'>". date("F d"). "</span>
+        </div>
+        </a>
+        </div>
+        ";
+      }
+    }
+  ?>
+
+  <!--<div class="lower-section">
     <a href="article.html" class="blog">
       <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, nulla.</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -46,7 +74,7 @@
         <span class="date">May 19</span>
       </div>
       </a>
-    </div>
+    </div>-->
 
   </div>
 

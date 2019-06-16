@@ -160,6 +160,8 @@ header .brand{
   font-family: 'open sans', arial;
   margin: 0;
   line-height: 28px;
+  height: 50px;
+  text-overflow: ellipsis;
 }
 .blog p a{
   color: #21449C;
@@ -304,6 +306,21 @@ footer{
   line-height: 28px;
   font-family: 'open sans',arial;
   margin: 15px 0;
+}
+.article ul{
+  margin: 50px 0;
+
+}
+.article ul li{
+  display: inline-block;
+  margin: 10px;
+}
+.article ul li a{
+  color: #282828;
+  transition: 0.3s;
+}
+.article ul li a:hover{
+  color: #21449C;
 }
 
 /*sign up*/
