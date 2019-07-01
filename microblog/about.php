@@ -6,11 +6,12 @@
      <!-- Fonts Lora and open sans -->
   <link href="https://fonts.googleapis.com/css?family=EB+Garamond:400,500,600,700,800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,600i,700&display=swap" rel="stylesheet">
-  <link rel= "stylesheet" href="fontawesome.min.css"/>
+  <link rel= "stylesheet" href="css/fontawesome.min.css"/>
   <link rel="stylesheet" href="./css/style.css">
     <title>Microblog - About</title>
 </head>
 <body>
+ 
     <header>
       <div class="brand">
         <h1></h1>
@@ -19,9 +20,8 @@
           <li><a href="about.php">contact</a></li>
         </ul>
       </div>
-
     </header>
-
+  
 
     <div class="contact">
         <div class="contact-intro">
@@ -45,17 +45,27 @@
     </div>
   </div>
 
-  <div class="email">
-    <p>Never miss a post</p>
-    <form class="" action="index.html" method="post">
-      <input type="text" name="" placeholder="Your email">
-      <button type="submit" id="bbtn">send</button>
-    </form>
-  </div>
+  <section id="email">
+        <div class="email">
+            <div class="email-title">
+                <h3>Newsletter</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum corporis officia accusamus. Provident, nisi minus.</p>
+            </div>
+            <form action="">
+                <input type="text" placeholder="Name">
+                <input type="text" placeholder="Email">
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
 
-  <footer>
-    &copy microblog 2019
-  </footer>
+    <footer>
+        <p>&copy; copyright 2019</p>
+        <ul>
+            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+            <li><a href=""><i class="fa fa-instagram"></i></a></li>
+        </ul>
+    </footer>
 
   
 </body>

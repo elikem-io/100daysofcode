@@ -73,16 +73,26 @@
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro eos optio cumque perspiciatis, odio, officia rerum tempore fuga omnis ipsum, molestias necessitatibus magnam distinctio corrupti delectus iure totam quisquam doloribus. Excepturi, magnam tempora cumque, iusto autem vitae ipsam omnis iste deserunt dolor ab, veritatis velit asperiores at praesentium. Vitae, molestias.
         </p>
     </div>-->
-    <div class="email">
-        <p>Never miss a post</p>
-        <form class="" action="index.html" method="post">
-          <input type="text" name="" placeholder="Your email">
-          <button type="submit" id="bbtn">send</button>
-        </form>
-      </div>
-    
-      <footer>
-        &copy microblog 2019
-      </footer>
+    <section id="email">
+        <div class="email">
+            <div class="email-title">
+                <h3>Newsletter</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum corporis officia accusamus. Provident, nisi minus.</p>
+            </div>
+            <form action="">
+                <input type="text" placeholder="Name">
+                <input type="text" placeholder="Email">
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; copyright 2019</p>
+        <ul>
+            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+            <li><a href=""><i class="fa fa-instagram"></i></a></li>
+        </ul>
+    </footer>
 </body>
 </html>

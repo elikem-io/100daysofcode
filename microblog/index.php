@@ -13,17 +13,11 @@
   <title>Microblog</title>
 </head>
 <body>
-  <div class="top-section">
-    <header>
       <div class="brand">
         <h1></h1>
-        <ul class="menu">
-          <li><a href="index.php">home</a></li>
-          <li><a href="about.php">contact</a></li>
-        </ul>
+        
       </div>
-
-    </header>
+  <div class="top-section">
 
     <div class="title">
       <div class="title-content">
@@ -33,6 +27,11 @@
           Excepturi vitae ab expedita repudiandae officia, impedit consequatur, distinctio
           nisi soluta inventore dolor quos, esse numquam temporibus nostrum facilis earum.
         </p>
+        <ul>
+          <li><a href=""><i class="fa fa-twitter"></i></a></li>
+          <li><a href=""><i class="fa fa-behance"></i></a></li>
+          <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+        </ul>
       </div>
       <a href="about.php" id="img"><img src="./img/pp.jpeg" alt=""></a>
     </div>
@@ -51,7 +50,7 @@
         <div class = lower-section>
         <a href='article.php?id=".$row['id']."' class='blog'>
         <h3> ". $row["subject"]. "</h3>
-        <p>" . $row["content"]. "</p>
+        <p>" .substr($row["content"], 0, 200 ). "</p>
         <div class='details'>
           <p class='author'>Written by :". $row["author"]. "</p>
           <span class='date'>". date("F d"). "</span>
@@ -77,8 +76,29 @@
     </div>-->
 
   </div>
+  <section id="email">
+        <div class="email">
+            <div class="email-title">
+                <h3>Newsletter</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum corporis officia accusamus. Provident, nisi minus.</p>
+            </div>
+            <form action="">
+                <input type="text" placeholder="Name">
+                <input type="text" placeholder="Email">
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
 
-  <div class="email">
+    <footer>
+        <p>&copy; copyright 2019</p>
+        <ul>
+            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+            <li><a href=""><i class="fa fa-instagram"></i></a></li>
+        </ul>
+    </footer>
+
+  <!--<div class="email">
     <p>Never miss a post</p>
     <form class="" action="index.html" method="post">
       <input type="text" name="" placeholder="Your email">
@@ -88,7 +108,7 @@
 
   <footer>
     &copy microblog 2019
-  </footer>
+  </footer>-->
 
 </body>
 </html>

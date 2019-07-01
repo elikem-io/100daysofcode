@@ -25,24 +25,36 @@
                 header("Location: ../signin.php?signup=email");
                 exit();
             }else{
-                $sql = "SELECT * FROM users WHERE username='$uid';";
-                $result = mysqli_query($conn, $sql);
-                $resultCheck = mysqli_num_rows($result);
-
-                if($resultCheck > 0){
-                    header("Location: ../signin.php?signup=usertaken");
-                    exit();
-                }else{
+               $sql = "SELECT * FROM users WHERE username='$uid';";
+               $stmt = mysqli_stmt_init($conn);
+               if(!mysqli_stmt_prepare($stmt,$sql)){
+                   header("Location: ../signin.php?signin=gonr");
+                   exit();
+               }else{
+                   mysqli_stmt_execute($stmt);
+                   $result = mysqli_stmt_get_result($stmt);
+                   $rowCount = mysqli_num_rows($result);
+                   if($rowCount > 0){
+                       header("Location: ../signin.php?signin=usertaken");
+                       exit();
+                   }else{
                     //hash the password
-                    $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
-                    //insert the user into the database
-                    $sql = "INSERT INTO users (firstname,lastname,email,username,pwd) 
-                    VALUES ('$first','$last','$email','$uid','$hashedPwd')";
+                    $hashedPassword = password_hash($pwd, PASSWORD_DEFAULT);
 
-                    mysqli_query($conn, $sql);
-                    header("Location: ../signin.php?signup=success");
-                    exit();
-                }
+                    //create user
+                    $sql = "INSERT INTO users (firstname,lastname,email,username,pwd) 
+                       VALUES (?,?,?,?,?)";
+                    if(!mysqli_stmt_prepare($stmt, $sql)){
+                        header("Location: ../signin.php?signin=failed");
+                        exit();
+                    }
+                    else{
+                        mysqli_stmt_bind_param($stmt, "sssss", $first, $last, $email, $uid, $hashedPassword);
+                        mysqli_execute($stmt);
+                        header("Location: ../signin.php?signup=successful");
+                    }
+                   }
+               }
             }   
         }
     }
@@ -57,4 +69,23 @@
     
    
 
-    
+    // {
+    //     $sql = "SELECT * FROM users WHERE username='$uid';";
+    //     $result = mysqli_query($conn, $sql);
+    //     $resultCheck = mysqli_num_rows($result);
+
+    //     if($resultCheck > 0){
+    //         header("Location: ../signin.php?signup=usertaken");
+    //         exit();
+    //     }else{
+    //         //hash the password
+    //         $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
+    //         //insert the user into the database
+    //         $sql = "INSERT INTO users (firstname,lastname,email,username,pwd) 
+    //         VALUES ('$first','$last','$email','$uid','$hashedPwd')";
+
+    //         mysqli_query($conn, $sql);
+    //         header("Location: ../signin.php?signup=success");
+    //         exit();
+    //     }
+    // }   

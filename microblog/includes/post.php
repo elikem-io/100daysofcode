@@ -16,13 +16,19 @@
                 header("Location: ../form.php?signup=invalid");
                 exit();
             }else{
-           
-                //insert the values into the tables
                 $sql = "INSERT INTO blogposts (subject, author, content) 
-                VALUES ('$title','$author','$content')";
-                mysqli_query($conn, $sql);
-                header("Location: ../form.php?upload=success");
-                exit();
+                 VALUES (?,?,?)"; 
+                $stmt = mysqli_stmt_init($conn);
+                if(!mysqli_stmt_prepare($stmt, $sql)){
+                    header("Location: ../form.php?upload=failed");
+                    exit();
+                }else{
+                    mysqli_stmt_bind_param($stmt, "sss", $title, $author, $content);
+                    mysqli_execute($stmt);
+                    header("Location: ../index.php?upload=success");
+                    exit();
+                }
+               
             }
         }
 
@@ -30,3 +36,12 @@
         header("Location: ../form.php?upload=error");
         exit();
     }
+
+
+
+    //  //insert the values into the tables
+    //  $sql = "INSERT INTO blogposts (subject, author, content) 
+    //  VALUES ('$title','$author','$content')";
+    //  mysqli_query($conn, $sql);
+    //  header("Location: ../form.php?upload=success");
+    //  exit();

@@ -1,0 +1,260 @@
+body{
+    background-color:  #dddddd;
+}
+h1,p{
+    margin: 0;
+}
+img{
+  width: 100%;
+  height: 100%;
+}
+.tag{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background: #000;
+  padding: 10px 20px;
+  transform: rotate(270deg);
+}
+.tag p{
+  color: #fff;
+  font-weight: bold;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    margin: 50px 30px;
+}
+header #branding{
+  font-family: 'Segoe UI';
+}
+header form select{
+ 
+}
+header select, input{
+  border-radius: 5px;
+  padding: 10px 20px;
+  outline: none;
+  border: 2px solid #757575;
+}
+header form input{
+  width: 50px;
+}
+header select option{
+  padding: 10px 20px;
+  font-family: 'Segoe UI';
+  background-color: #0c71ac;
+  color: #fff;
+  font-weight: bolder;
+}
+header form label{
+  font-family: 'Segoe UI';
+  margin: 0 5px;
+  color:#0c71ac;
+  font-weight: bolder;
+}
+#user-profile{
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.profile{
+    display: flex;
+    background: #fff;
+    padding: 50px;
+    width: 70%;
+    min-height: 400px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+.profile .img{
+    width: 50%;
+    height: 400px;
+}
+.profile .details{
+    padding-left: 30px;
+    width: 70%;
+}
+.name, .age,.profession,.need,.goals{
+  margin: 10px 0;
+}
+.name h1, .age h1,.profession h1,.need h1,.interests h1,.goals h1{
+  color: #0c71ac;
+  font-family: 'Lato';
+}
+.name p, .age p,.profession p,.need p,.interests p,.goals p{
+  font-family: 'Segoe UI';
+  font-size: 18px;
+  line-height: 20px;
+  color: #333;
+}
+.name h1, p,.age h1, p, .profession h1, p,.interests h1, p{
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.goals h1, p,.need h1, p{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.buttons button {
+  margin: 10px 5px;
+  padding: 10px 15px;
+  border: 2px solid #0c71ac;
+  font-size: 15px;
+  font-weight: bold;
+  background: none;
+  border-radius: 10px;
+}
+.buttons button:hover{
+  background: #0c71ac;
+  color: #fff;
+}
+/* pop up form*/
+.new-chag{
+    content: '';
+    position: fixed;
+    display: none;
+    top:0;
+    left:0;
+    width: 100%;
+    height:100%;
+    background: #000;
+    overflow: auto;
+    z-index: 1;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  .new-chag-form{
+   background-color: #fefefe;
+   margin: 10px auto;
+   padding: 20px;
+   width: 50%;
+   text-align: center;
+   border-radius: 20px;
+  }
+  .close {
+   color: #aaa;
+   font-size: 28px;
+   font-weight: bold;
+ }
+ .close:hover,
+ .close:focus {
+   color: #fff;
+   text-decoration: none;
+   cursor: pointer;
+   background: #0c71ac;
+   padding: 10px;
+   border-radius:50px;
+ }
+ .create-new-chag{
+   margin-top: 50px; 
+ }
+ .create-new-chag h3{
+   text-align: center;
+   background: #000;
+   display: inline-block;
+   padding: 10px 20px;
+   color: #EFEFEF;
+   border-radius: 5px;
+ }
+ .create-new-chag form div{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   width: 80%
+   margin: 0 auto;
+ }
+ .create-new-chag form input{
+   width: 80%;
+   height: 60px;
+   margin: 10px  auto;
+   padding: 5px 12px;
+   border: 2px solid #757575;
+   border-radius: 10px;
+   outline: none;
+ }
+ .create-new-chag form textarea{
+  width: 80%;
+  height: 100px;
+  margin: 10px auto;
+  padding: 12px;
+  border: 2px solid #757575;
+  border-radius: 10px;
+  outline: none;
+
+}
+ .create-new-chag form label{
+   font-weight: bold;
+   font-size: 20px;
+   text-align: left;
+   margin-left: 80px;
+   font-family: Arial, Helvetica, sans-serif;
+ }
+ .create-new-chag form button{
+   width: 80%;
+   margin: 10px auto;
+    height: 70px;
+    background-color: #fff;
+    border: 2px solid #0c71ac;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #0c71ac;
+    border-radius: 10px;
+ }
+ .create-new-chag form button:hover{
+   background-color: #0c71ac;
+   color: #ffffff;
+ }
+
+ /* media queries */
+ @media(max-width: 767px){
+  .tag{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,0);
+    background: #000;
+    padding: 10px 20px;
+    transform: rotate(-50%,0deg);
+  }
+  .tag p{
+    color: #fff;
+    font-weight: bold;
+  }
+  header{
+    width: 100%;
+   flex-direction: column;
+}
+header #branding{
+  margin: 20px 0;
+}
+header select{
+  width: 100%;
+  display: block;
+  margin-bottom: 15px;
+}
+header form input{
+  width: 70px;
+  display: inline-block;
+}
+header form label{
+  margin-bottom: 10px;
+}
+#user-frofile{
+  width: 100%;
+}
+.profile{
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 200px;
+}
+.profile .img{
+  width: 100%;
+}
+.profile .details{
+  padding-left: 0px;
+  width: 100%;
+}
+ }
